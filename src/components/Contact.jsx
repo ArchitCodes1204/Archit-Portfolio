@@ -54,8 +54,8 @@ export default function Contact() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`p-3 transition-all ${isDark
-                                        ? "bg-dark-bg border-dark-border"
-                                        : "bg-white border-gray-200"
+                                    ? "bg-dark-bg border-dark-border"
+                                    : "bg-white border-gray-200"
                                     } border rounded-full group`}
                             >
                                 <SiGithub size={24} color={isDark ? "#ffffff" : "#181717"} className="transition-colors" />
@@ -66,8 +66,8 @@ export default function Contact() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`p-3 transition-all ${isDark
-                                        ? "bg-dark-bg border-dark-border"
-                                        : "bg-white border-gray-200"
+                                    ? "bg-dark-bg border-dark-border"
+                                    : "bg-white border-gray-200"
                                     } border rounded-full group`}
                             >
                                 <SiLinkedin size={24} color="#0077B5" />
@@ -78,8 +78,8 @@ export default function Contact() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`p-3 transition-all ${isDark
-                                        ? "bg-dark-bg border-dark-border"
-                                        : "bg-white border-gray-200"
+                                    ? "bg-dark-bg border-dark-border"
+                                    : "bg-white border-gray-200"
                                     } border rounded-full group`}
                             >
                                 <SiLeetcode size={24} color="#FFA116" />
@@ -95,8 +95,8 @@ export default function Contact() {
                         whileHover={{ scale: 1.02, rotateY: 2 }}
                         transition={{ type: "spring", stiffness: 200 }}
                         className={`p-8 ${isDark
-                                ? "bg-dark-bg border-dark-border"
-                                : "bg-white border-gray-200"
+                            ? "bg-dark-bg border-dark-border"
+                            : "bg-white border-gray-200"
                             } border`}
                         style={{ transformStyle: "preserve-3d" }}
                     >
@@ -106,8 +106,8 @@ export default function Contact() {
                                 <input
                                     type="text"
                                     className={`w-full px-4 py-3 focus:outline-none transition-all ${isDark
-                                            ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
-                                            : "bg-white border-gray-200 text-black focus:border-black"
+                                        ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
+                                        : "bg-white border-gray-200 text-black focus:border-black"
                                         } border`}
                                 />
                             </div>
@@ -116,8 +116,8 @@ export default function Contact() {
                                 <input
                                     type="email"
                                     className={`w-full px-4 py-3 focus:outline-none transition-all ${isDark
-                                            ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
-                                            : "bg-white border-gray-200 text-black focus:border-black"
+                                        ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
+                                        : "bg-white border-gray-200 text-black focus:border-black"
                                         } border`}
                                 />
                             </div>
@@ -126,8 +126,8 @@ export default function Contact() {
                                 <textarea
                                     rows="4"
                                     className={`w-full px-4 py-3 focus:outline-none transition-all resize-none ${isDark
-                                            ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
-                                            : "bg-white border-gray-200 text-black focus:border-black"
+                                        ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
+                                        : "bg-white border-gray-200 text-black focus:border-black"
                                         } border`}
                                 ></textarea>
                             </div>
@@ -136,16 +136,30 @@ export default function Contact() {
                                 whileTap={{ scale: 0.95 }}
                                 type="submit"
                                 className={`w-full py-4 font-medium transition-all ${isDark
-                                        ? "bg-dark-text text-dark-bg hover:bg-dark-text-secondary"
-                                        : "bg-black text-white hover:bg-gray-800"
+                                    ? "bg-dark-text text-dark-bg hover:bg-dark-text-secondary"
+                                    : "bg-black text-white hover:bg-gray-800"
                                     }`}
                             >
                                 Send Message
                             </motion.button>
                         </form>
                     </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className={`mt-20 pt-8 border-t ${isDark ? "border-dark-border" : "border-gray-200"} flex flex-col items-center gap-4`}
+                    >
+                        <div className={`flex items-center gap-2 ${isDark ? "text-dark-text-secondary" : "text-gray-600"}`}>
+                            <Mail size={16} />
+                            <span className="text-sm font-medium">archit0825@gmail.com</span>
+                        </div>
+                        <p className={`text-sm font-medium ${isDark ? "text-dark-text-secondary" : "text-gray-600"}`}>
+                            ⚡Created By Archit | © 2025 All rights reserved. ™ ⚡
+                        </p>
+                    </motion.div>
                 </div>
-            </div>
         </section>
     );
 }
