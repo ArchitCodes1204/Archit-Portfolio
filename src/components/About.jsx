@@ -42,22 +42,14 @@ export default function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="grid grid-cols-2 gap-8"
+                        className="flex justify-start"
                     >
-                        <motion.div
-                            whileHover={{ scale: 1.05, rotateY: 5 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                            className={`text-center p-8 ${isDark ? "bg-dark-bg border-dark-border" : "bg-white border-gray-200"} border`}
-                        >
-                            <h3 className={`text-5xl font-bold mb-2 ${isDark ? "text-dark-text" : "text-black"}`}>3+</h3>
-                            <p className={`text-sm text-caps ${isDark ? "text-dark-text-secondary" : "text-gray-500"}`}>Years Experience</p>
-                        </motion.div>
                         <motion.div
                             whileHover={{ scale: 1.05, rotateY: -5 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className={`text-center p-8 ${isDark ? "bg-dark-bg border-dark-border" : "bg-white border-gray-200"} border`}
+                            className={`text-center p-8 w-full ${isDark ? "bg-dark-bg border-dark-border" : "bg-white border-gray-200"} border`}
                         >
-                            <h3 className={`text-5xl font-bold mb-2 ${isDark ? "text-dark-text" : "text-black"}`}>20+</h3>
+                            <h3 className={`text-5xl font-bold mb-2 ${isDark ? "text-dark-text" : "text-black"}`}>10+</h3>
                             <p className={`text-sm text-caps ${isDark ? "text-dark-text-secondary" : "text-gray-500"}`}>Projects</p>
                         </motion.div>
                     </motion.div>
