@@ -48,8 +48,8 @@ export default function Navbar() {
                                 <a
                                     href={link.href}
                                     className={`text-sm font-medium tracking-wide transition-colors ${active === link.name
-                                            ? (isDark ? "text-dark-text" : "text-black")
-                                            : (isDark ? "text-dark-text-secondary hover:text-dark-text" : "text-gray-500 hover:text-black")
+                                        ? (isDark ? "text-dark-text" : "text-black")
+                                        : (isDark ? "text-dark-text-secondary hover:text-dark-text" : "text-gray-500 hover:text-black")
                                         }`}
                                     onClick={() => setActive(link.name)}
                                 >
@@ -69,8 +69,8 @@ export default function Navbar() {
                             <button
                                 onClick={toggleTheme}
                                 className={`p-2 rounded-full transition-all ${isDark
-                                        ? "hover:bg-dark-surface"
-                                        : "hover:bg-gray-100"
+                                    ? "hover:bg-dark-surface"
+                                    : "hover:bg-gray-100"
                                     }`}
                                 aria-label="Toggle theme"
                             >
@@ -82,10 +82,7 @@ export default function Navbar() {
                             </button>
                         </li>
 
-                        {/* Copyright Marker */}
-                        <li className={`text-xs font-medium ${isDark ? "text-dark-text-secondary" : "text-gray-400"}`}>
-                            @2026
-                        </li>
+
                     </ul>
 
                     {/* Mobile Menu Toggle */}
@@ -94,8 +91,8 @@ export default function Navbar() {
                         <button
                             onClick={toggleTheme}
                             className={`p-2 rounded-full transition-all ${isDark
-                                    ? "hover:bg-dark-surface"
-                                    : "hover:bg-gray-100"
+                                ? "hover:bg-dark-surface"
+                                : "hover:bg-gray-100"
                                 }`}
                             aria-label="Toggle theme"
                         >
@@ -119,8 +116,8 @@ export default function Navbar() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -20 }}
                                     className={`absolute top-full left-0 right-0 shadow-lg ${isDark
-                                            ? "bg-dark-bg border-dark-border"
-                                            : "bg-white border-gray-200"
+                                        ? "bg-dark-bg border-dark-border"
+                                        : "bg-white border-gray-200"
                                         } border-b`}
                                 >
                                     <ul className="flex flex-col py-4 px-6 gap-4">
@@ -129,8 +126,8 @@ export default function Navbar() {
                                                 <a
                                                     href={link.href}
                                                     className={`text-sm font-medium tracking-wide block py-2 ${active === link.name
-                                                            ? (isDark ? "text-dark-text" : "text-black")
-                                                            : (isDark ? "text-dark-text-secondary" : "text-gray-500")
+                                                        ? (isDark ? "text-dark-text" : "text-black")
+                                                        : (isDark ? "text-dark-text-secondary" : "text-gray-500")
                                                         }`}
                                                     onClick={() => {
                                                         setToggle(!toggle);
