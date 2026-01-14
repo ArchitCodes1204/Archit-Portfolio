@@ -10,7 +10,7 @@ const projects = [
         tech: ["React", "Tailwind CSS", "Chart.js", "Local Storage"],
         image: "/expense-tracker.png",
         link: "https://v0-expense-tracker-project-beta.vercel.app/",
-        github: "https://github.com/ArchitCodes1204",
+        github: "https://github.com/ArchitCodes1204/expense-tracker.git",
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const projects = [
         tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
         image: "/stockcrypt.png",
         link: "https://stock-crypt-theta.vercel.app/login",
-        github: "https://github.com/ArchitCodes1204",
+        github: "https://github.com/ArchitCodes1204/StockCrypt.git",
     },
     {
         id: 3,
@@ -28,7 +28,7 @@ const projects = [
         tech: ["React", "Tailwind CSS", "Local Storage"],
         image: "/todo-list.png",
         link: "https://todo-list-jade-ten.vercel.app/",
-        github: "https://github.com/ArchitCodes1204",
+        github: "https://github.com/ArchitCodes1204/todo-list.git",
     },
 ];
 
