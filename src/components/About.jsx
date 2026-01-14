@@ -32,12 +32,7 @@ export default function About() {
                         className="space-y-6"
                     >
                         <p className={`text-base leading-relaxed ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>
-                            I am a full-stack developer with a passion for creating beautiful, functional, and user-centered digital experiences.
-                            With expertise in React and Node.js, I bridge the gap between design and engineering.
-                        </p>
-                        <p className={`text-base leading-relaxed ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>
-                            My journey started with simple static pages and evolved into building complex web applications.
-                            I thrive on solving challenging problems and optimizing performance.
+                            I am a Full Stack Developer with a passion for developing innovative web-based solutions. Being skilled in both Front-end and Back-end development, along with proficiency in DSA, helps me tackle complex problems and design clean and optimized codes. In fact, I look forward to the chance to develop something of great value and significance.
                         </p>
                     </motion.div>
 
