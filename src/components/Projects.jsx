@@ -8,6 +8,7 @@ const projects = [
         title: "Expense Tracker",
         description: "A comprehensive expense tracking application that helps users manage their finances effectively. Features include transaction categorization, visual analytics, and budget monitoring with an intuitive user interface.",
         tech: ["React", "Tailwind CSS", "Chart.js", "Local Storage"],
+        image: "/expense-tracker.png",
         link: "https://v0-expense-tracker-project-beta.vercel.app/",
         github: "https://github.com/ArchitCodes1204",
     },
@@ -16,6 +17,7 @@ const projects = [
         title: "StockCrypt - Stock Management System",
         description: "A full-stack stock management platform designed for businesses to track inventory, manage stock levels, and analyze sales data. Includes user authentication, real-time updates, and comprehensive reporting features.",
         tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+        image: "/stockcrypt.png",
         link: "https://stock-crypt-theta.vercel.app/login",
         github: "https://github.com/ArchitCodes1204",
     },
@@ -24,6 +26,7 @@ const projects = [
         title: "Todo List Application",
         description: "A clean and efficient task management application with features like task creation, completion tracking, filtering, and persistent storage. Built with a focus on simplicity and user experience.",
         tech: ["React", "Tailwind CSS", "Local Storage"],
+        image: "/todo-list.png",
         link: "https://todo-list-jade-ten.vercel.app/",
         github: "https://github.com/ArchitCodes1204",
     },
@@ -64,11 +67,22 @@ export default function Projects() {
                                 transition: { type: "spring", stiffness: 300 }
                             }}
                             className={`group p-6 transition-all ${isDark
-                                    ? "bg-dark-bg border-dark-border hover:shadow-2xl"
-                                    : "bg-white border-gray-200 hover:shadow-lg"
+                                ? "bg-dark-bg border-dark-border hover:shadow-2xl"
+                                : "bg-white border-gray-200 hover:shadow-lg"
                                 } border flex flex-col h-full`}
                             style={{ transformStyle: "preserve-3d" }}
                         >
+                            {/* Project Image */}
+                            <div className="relative h-48 overflow-hidden mb-4 -mx-6 -mt-6">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className={`absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isDark ? "bg-dark-bg/80" : "bg-black/50"
+                                    }`}></div>
+                            </div>
+
                             {/* Project Info */}
                             <div className="flex-1">
                                 <h3 className={`text-xl font-bold mb-3 group-hover:underline ${isDark ? "text-dark-text" : "text-black"}`}>
@@ -80,8 +94,8 @@ export default function Projects() {
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tech.map((t) => (
                                         <span key={t} className={`text-xs px-3 py-1 ${isDark
-                                                ? "bg-dark-surface border-dark-border text-dark-text-secondary"
-                                                : "bg-gray-50 border-gray-200 text-gray-700"
+                                            ? "bg-dark-surface border-dark-border text-dark-text-secondary"
+                                            : "bg-gray-50 border-gray-200 text-gray-700"
                                             } border`}>
                                             {t}
                                         </span>
@@ -97,8 +111,8 @@ export default function Projects() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={`flex-1 p-3 text-center transition-all ${isDark
-                                            ? "bg-dark-surface border-dark-border hover:bg-dark-text hover:text-dark-bg"
-                                            : "bg-white border-gray-200 hover:bg-black hover:text-white"
+                                        ? "bg-dark-surface border-dark-border hover:bg-dark-text hover:text-dark-bg"
+                                        : "bg-white border-gray-200 hover:bg-black hover:text-white"
                                         } border flex items-center justify-center gap-2`}
                                     aria-label="View project"
                                 >
@@ -111,8 +125,8 @@ export default function Projects() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={`p-3 transition-all ${isDark
-                                            ? "bg-dark-surface border-dark-border hover:bg-dark-text hover:text-dark-bg"
-                                            : "bg-white border-gray-200 hover:bg-black hover:text-white"
+                                        ? "bg-dark-surface border-dark-border hover:bg-dark-text hover:text-dark-bg"
+                                        : "bg-white border-gray-200 hover:bg-black hover:text-white"
                                         } border`}
                                     aria-label="View source code"
                                 >
