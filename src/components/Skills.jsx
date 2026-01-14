@@ -3,7 +3,7 @@ import { useTheme } from "../context/ThemeContext";
 import {
     SiReact, SiNodedotjs, SiJavascript, SiTypescript, SiNextdotjs,
     SiMongodb, SiPostgresql, SiMysql, SiPython, SiCplusplus,
-    SiHtml5, SiCss3, SiTailwindcss, SiFigma, SiAmazonaws
+    SiHtml5, SiCss3, SiTailwindcss, SiFigma, SiAwsamplify
 } from "react-icons/si";
 import { FaPencilRuler } from "react-icons/fa";
 
@@ -23,7 +23,7 @@ const skills = [
     { name: "Python", icon: SiPython, color: "#3776AB" },
     { name: "C++", icon: SiCplusplus, color: "#00599C" },
     { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-    { name: "AWS", icon: SiAmazonaws, color: "#FF9900" },
+    { name: "AWS", icon: SiAwsamplify, color: "#FF9900" },
     { name: "UI/UX Design", icon: FaPencilRuler, color: "#FF61F6" },
 ];
 
@@ -53,12 +53,12 @@ export default function Skills() {
                 <div className="relative">
                     {/* Gradient Overlays */}
                     <div className={`absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none ${isDark
-                            ? "bg-gradient-to-r from-dark-bg to-transparent"
-                            : "bg-gradient-to-r from-white to-transparent"
+                        ? "bg-gradient-to-r from-dark-bg to-transparent"
+                        : "bg-gradient-to-r from-white to-transparent"
                         }`}></div>
                     <div className={`absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none ${isDark
-                            ? "bg-gradient-to-l from-dark-bg to-transparent"
-                            : "bg-gradient-to-l from-white to-transparent"
+                        ? "bg-gradient-to-l from-dark-bg to-transparent"
+                        : "bg-gradient-to-l from-white to-transparent"
                         }`}></div>
 
                     {/* Scrolling Container */}
@@ -113,8 +113,8 @@ export default function Skills() {
                         <span
                             key={skill.name}
                             className={`text-xs px-3 py-1 rounded-full ${isDark
-                                    ? "bg-dark-surface text-dark-text-secondary"
-                                    : "bg-gray-100 text-gray-600"
+                                ? "bg-dark-surface text-dark-text-secondary"
+                                : "bg-gray-100 text-gray-600"
                                 }`}
                         >
                             {skill.name}
