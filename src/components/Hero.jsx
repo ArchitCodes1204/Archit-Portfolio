@@ -54,17 +54,7 @@ export default function Hero() {
                     </motion.div>
                 </div>
 
-                {/* Bottom Tagline */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 1 }}
-                    className="text-center"
-                >
-                    <p className={`text-xs md:text-sm font-light ${isDark ? "text-dark-text-secondary" : "text-gray-400"}`}>
-                        Just an ordinary developer. From India with love.
-                    </p>
-                </motion.div>
+
 
                 {/* Navigation Links (Optional) */}
                 <motion.div

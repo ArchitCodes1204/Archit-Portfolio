@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
+import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
 import { useTheme } from "../context/ThemeContext";
 
 export default function Contact() {
@@ -41,7 +42,7 @@ export default function Contact() {
                             </div>
                             <div className={`flex items-center gap-4 ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>
                                 <MapPin size={20} />
-                                <span className="text-sm">India</span>
+                                <span className="text-sm">New Delhi, India</span>
                             </div>
                         </div>
 
@@ -53,11 +54,11 @@ export default function Contact() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`p-3 transition-all ${isDark
-                                        ? "bg-dark-bg border-dark-border hover:bg-dark-text hover:text-dark-bg"
-                                        : "bg-white border-gray-200 hover:bg-black hover:text-white"
-                                    } border`}
+                                        ? "bg-dark-bg border-dark-border"
+                                        : "bg-white border-gray-200"
+                                    } border rounded-full group`}
                             >
-                                <Github size={20} />
+                                <SiGithub size={24} color={isDark ? "#ffffff" : "#181717"} className="transition-colors" />
                             </motion.a>
                             <motion.a
                                 whileHover={{ scale: 1.1, rotateZ: -5 }}
@@ -65,11 +66,23 @@ export default function Contact() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`p-3 transition-all ${isDark
-                                        ? "bg-dark-bg border-dark-border hover:bg-dark-text hover:text-dark-bg"
-                                        : "bg-white border-gray-200 hover:bg-black hover:text-white"
-                                    } border`}
+                                        ? "bg-dark-bg border-dark-border"
+                                        : "bg-white border-gray-200"
+                                    } border rounded-full group`}
                             >
-                                <Linkedin size={20} />
+                                <SiLinkedin size={24} color="#0077B5" />
+                            </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.1, rotateZ: 5 }}
+                                href="https://leetcode.com/u/ARCHIT_CP/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`p-3 transition-all ${isDark
+                                        ? "bg-dark-bg border-dark-border"
+                                        : "bg-white border-gray-200"
+                                    } border rounded-full group`}
+                            >
+                                <SiLeetcode size={24} color="#FFA116" />
                             </motion.a>
                         </div>
                     </motion.div>
@@ -96,7 +109,6 @@ export default function Contact() {
                                             ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
                                             : "bg-white border-gray-200 text-black focus:border-black"
                                         } border`}
-                                    placeholder="John Doe"
                                 />
                             </div>
                             <div>
@@ -107,7 +119,6 @@ export default function Contact() {
                                             ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
                                             : "bg-white border-gray-200 text-black focus:border-black"
                                         } border`}
-                                    placeholder="john@example.com"
                                 />
                             </div>
                             <div>
@@ -118,7 +129,6 @@ export default function Contact() {
                                             ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
                                             : "bg-white border-gray-200 text-black focus:border-black"
                                         } border`}
-                                    placeholder="Your message..."
                                 ></textarea>
                             </div>
                             <motion.button
