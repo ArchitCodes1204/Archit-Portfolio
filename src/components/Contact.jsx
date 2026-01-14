@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
-import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiLeetcode, SiGmail } from "react-icons/si";
 import { useTheme } from "../context/ThemeContext";
 
 export default function Contact() {
@@ -84,6 +84,16 @@ export default function Contact() {
                             >
                                 <SiLeetcode size={24} color="#FFA116" />
                             </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.1, rotateZ: -5 }}
+                                href="mailto:archit0825@gmail.com"
+                                className={`p-3 transition-all ${isDark
+                                    ? "bg-dark-bg border-dark-border"
+                                    : "bg-white border-gray-200"
+                                    } border rounded-full group`}
+                            >
+                                <SiGmail size={24} color="#EA4335" />
+                            </motion.a>
                         </div>
                     </motion.div>
 
@@ -144,22 +154,20 @@ export default function Contact() {
                             </motion.button>
                         </form>
                     </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className={`mt-20 pt-8 border-t ${isDark ? "border-dark-border" : "border-gray-200"} flex flex-col items-center gap-4`}
-                    >
-                        <div className={`flex items-center gap-2 ${isDark ? "text-dark-text-secondary" : "text-gray-600"}`}>
-                            <Mail size={16} />
-                            <span className="text-sm font-medium">archit0825@gmail.com</span>
-                        </div>
-                        <p className={`text-sm font-medium ${isDark ? "text-dark-text-secondary" : "text-gray-600"}`}>
-                            ⚡Created By Archit | © 2025 All rights reserved. ™ ⚡
-                        </p>
-                    </motion.div>
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className={`mt-20 pt-8 border-t ${isDark ? "border-dark-border" : "border-gray-200"} flex flex-col items-center gap-4`}
+                >
+                    <p className={`text-sm font-medium ${isDark ? "text-dark-text-secondary" : "text-gray-600"}`}>
+                        ⚡Created By Archit | © 2025 All rights reserved. ™ ⚡
+                    </p>
+                </motion.div>
+            </div>
         </section>
     );
 }
