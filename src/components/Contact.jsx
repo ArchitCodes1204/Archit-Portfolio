@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Contact() {
+    const { isDark } = useTheme();
+
     return (
-        <section id="contact" className="py-32 bg-gray-50">
+        <section id="contact" className={`py-32 ${isDark ? "bg-dark-surface" : "bg-gray-50"}`}>
             <div className="max-w-6xl mx-auto px-6">
                 {/* Section Header */}
                 <motion.div
@@ -13,10 +16,10 @@ export default function Contact() {
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-black text-caps mb-4">
+                    <h2 className={`text-3xl md:text-4xl font-bold text-caps mb-4 ${isDark ? "text-dark-text" : "text-black"}`}>
                         Contact
                     </h2>
-                    <div className="w-16 h-[2px] bg-black"></div>
+                    <div className={`w-16 h-[2px] ${isDark ? "bg-dark-text" : "bg-black"}`}></div>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -27,16 +30,16 @@ export default function Contact() {
                         viewport={{ once: true }}
                         className="space-y-8"
                     >
-                        <p className="text-gray-700 text-base leading-relaxed">
+                        <p className={`text-base leading-relaxed ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>
                             I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
                         </p>
 
                         <div className="space-y-4">
-                            <div className="flex items-center gap-4 text-gray-700">
+                            <div className={`flex items-center gap-4 ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>
                                 <Mail size={20} />
                                 <span className="text-sm">archit0825@gmail.com</span>
                             </div>
-                            <div className="flex items-center gap-4 text-gray-700">
+                            <div className={`flex items-center gap-4 ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>
                                 <MapPin size={20} />
                                 <span className="text-sm">India</span>
                             </div>
@@ -44,22 +47,30 @@ export default function Contact() {
 
                         {/* Social Links */}
                         <div className="flex gap-4 pt-4">
-                            <a
+                            <motion.a
+                                whileHover={{ scale: 1.1, rotateZ: 5 }}
                                 href="https://github.com/ArchitCodes1204"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 minimal-border bg-white hover:bg-black hover:text-white transition-all"
+                                className={`p-3 transition-all ${isDark
+                                        ? "bg-dark-bg border-dark-border hover:bg-dark-text hover:text-dark-bg"
+                                        : "bg-white border-gray-200 hover:bg-black hover:text-white"
+                                    } border`}
                             >
                                 <Github size={20} />
-                            </a>
-                            <a
+                            </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.1, rotateZ: -5 }}
                                 href="https://linkedin.com/in/archit-mamodiya-42514a221"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 minimal-border bg-white hover:bg-black hover:text-white transition-all"
+                                className={`p-3 transition-all ${isDark
+                                        ? "bg-dark-bg border-dark-border hover:bg-dark-text hover:text-dark-bg"
+                                        : "bg-white border-gray-200 hover:bg-black hover:text-white"
+                                    } border`}
                             >
                                 <Linkedin size={20} />
-                            </a>
+                            </motion.a>
                         </div>
                     </motion.div>
 
@@ -68,39 +79,59 @@ export default function Contact() {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="p-8 minimal-border bg-white"
+                        whileHover={{ scale: 1.02, rotateY: 2 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                        className={`p-8 ${isDark
+                                ? "bg-dark-bg border-dark-border"
+                                : "bg-white border-gray-200"
+                            } border`}
+                        style={{ transformStyle: "preserve-3d" }}
                     >
                         <form className="space-y-6">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <label className={`block text-sm font-medium mb-2 ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>Name</label>
                                 <input
                                     type="text"
-                                    className="w-full bg-white border border-gray-200 px-4 py-3 text-black focus:outline-none focus:border-black transition-all"
+                                    className={`w-full px-4 py-3 focus:outline-none transition-all ${isDark
+                                            ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
+                                            : "bg-white border-gray-200 text-black focus:border-black"
+                                        } border`}
                                     placeholder="John Doe"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <label className={`block text-sm font-medium mb-2 ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>Email</label>
                                 <input
                                     type="email"
-                                    className="w-full bg-white border border-gray-200 px-4 py-3 text-black focus:outline-none focus:border-black transition-all"
+                                    className={`w-full px-4 py-3 focus:outline-none transition-all ${isDark
+                                            ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
+                                            : "bg-white border-gray-200 text-black focus:border-black"
+                                        } border`}
                                     placeholder="john@example.com"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <label className={`block text-sm font-medium mb-2 ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>Message</label>
                                 <textarea
                                     rows="4"
-                                    className="w-full bg-white border border-gray-200 px-4 py-3 text-black focus:outline-none focus:border-black transition-all resize-none"
+                                    className={`w-full px-4 py-3 focus:outline-none transition-all resize-none ${isDark
+                                            ? "bg-dark-surface border-dark-border text-dark-text focus:border-dark-text"
+                                            : "bg-white border-gray-200 text-black focus:border-black"
+                                        } border`}
                                     placeholder="Your message..."
                                 ></textarea>
                             </div>
-                            <button
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                                 type="submit"
-                                className="w-full py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all"
+                                className={`w-full py-4 font-medium transition-all ${isDark
+                                        ? "bg-dark-text text-dark-bg hover:bg-dark-text-secondary"
+                                        : "bg-black text-white hover:bg-gray-800"
+                                    }`}
                             >
                                 Send Message
-                            </button>
+                            </motion.button>
                         </form>
                     </motion.div>
                 </div>

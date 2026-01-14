@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
 
 const experiences = [
     {
@@ -25,8 +26,10 @@ const experiences = [
 ];
 
 export default function Experience() {
+    const { isDark } = useTheme();
+
     return (
-        <section id="experience" className="py-32 bg-white minimal-border-bottom">
+        <section id="experience" className={`py-32 ${isDark ? "bg-dark-bg" : "bg-white"} ${isDark ? "border-dark-border" : "border-gray-200"} border-b`}>
             <div className="max-w-6xl mx-auto px-6">
                 {/* Section Header */}
                 <motion.div
@@ -36,13 +39,13 @@ export default function Experience() {
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-black text-caps mb-4">
+                    <h2 className={`text-3xl md:text-4xl font-bold text-caps mb-4 ${isDark ? "text-dark-text" : "text-black"}`}>
                         Experience
                     </h2>
-                    <div className="w-16 h-[2px] bg-black"></div>
+                    <div className={`w-16 h-[2px] ${isDark ? "bg-dark-text" : "bg-black"}`}></div>
                 </motion.div>
 
-                <div className="relative border-l-2 border-gray-200 ml-3 space-y-12">
+                <div className={`relative border-l-2 ml-3 space-y-12 ${isDark ? "border-dark-border" : "border-gray-200"}`}>
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={exp.id}
@@ -50,16 +53,21 @@ export default function Experience() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
+                            whileHover={{ x: 10, transition: { type: "spring", stiffness: 300 } }}
                             className="relative pl-8"
                         >
                             {/* Dot on line */}
-                            <div className="absolute -left-[9px] top-2 w-4 h-4 bg-black rounded-full" />
+                            <motion.div
+                                whileHover={{ scale: 1.5, rotate: 180 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                className={`absolute -left-[9px] top-2 w-4 h-4 rounded-full ${isDark ? "bg-dark-text" : "bg-black"}`}
+                            />
 
                             <div className="pb-8">
-                                <span className="text-xs text-gray-500 text-caps mb-2 block">{exp.period}</span>
-                                <h3 className="text-xl font-bold text-black mb-1">{exp.role}</h3>
-                                <p className="text-gray-600 mb-3 font-medium">{exp.company}</p>
-                                <p className="text-gray-700 leading-relaxed text-sm">{exp.description}</p>
+                                <span className={`text-xs text-caps mb-2 block ${isDark ? "text-dark-text-secondary" : "text-gray-500"}`}>{exp.period}</span>
+                                <h3 className={`text-xl font-bold mb-1 ${isDark ? "text-dark-text" : "text-black"}`}>{exp.role}</h3>
+                                <p className={`mb-3 font-medium ${isDark ? "text-dark-text-secondary" : "text-gray-600"}`}>{exp.company}</p>
+                                <p className={`leading-relaxed text-sm ${isDark ? "text-dark-text-secondary" : "text-gray-700"}`}>{exp.description}</p>
                             </div>
                         </motion.div>
                     ))}
