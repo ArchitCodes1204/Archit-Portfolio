@@ -30,6 +30,15 @@ const projects = [
         link: "https://todo-list-jade-ten.vercel.app/",
         github: "https://github.com/ArchitCodes1204/todo-list.git",
     },
+    {
+        id: 4,
+        title: "NoteBot",
+        description: "An AI-powered chatbot bridging seamless interaction and smart note assistance. Built for responsiveness and engaging user experiences.",
+        tech: ["React", "AI Integration", "Tailwind CSS", "Vite"],
+        image: "/notebot_logo.png",
+        link: "https://chat-bot-kappa-gray.vercel.app/",
+        github: "https://github.com/ArchitCodes1204/ChatBot.git",
+    },
 ];
 
 export default function Projects() {
