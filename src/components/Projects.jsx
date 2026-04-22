@@ -39,6 +39,15 @@ const projects = [
         link: "https://archit-notebot-gray.vercel.app/",
         github: "https://github.com/ArchitCodes1204/ChatBot.git",
     },
+    {
+        id: 5,
+        title: "Credit Risk Assessment Platform",
+        description: "An enterprise-grade Credit Risk Assessment platform leveraging Multi-Agent AI, RAG, and Machine Learning to deliver real-time, regulation-compliant lending decisions.",
+        tech: ["Multi-Agent AI", "RAG", "Machine Learning", "GenAI"],
+        image: "/credit-risk.png",
+        link: "https://gen-ai-2.vercel.app",
+        github: "https://github.com/naveendhaterwal/gen-ai-2.git",
+    },
 ];
 
 export default function Projects() {
