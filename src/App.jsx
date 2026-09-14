@@ -18,5 +18,5 @@ function App() {
     </div>
   );
 }
-//this is my por
+//this is my p
 export default App;
