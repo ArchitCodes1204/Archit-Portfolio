@@ -18,5 +18,5 @@ function App() {
     </div>
   );
 }
-//this is my portfolio
+//this is my portf
 export default App;
